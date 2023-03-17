@@ -1,9 +1,20 @@
-# README
+# PIZZA API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails API for tracking pizza restaurants and their menus.
 
-Things you may want to cover:
+## Installation
+
+To run this API locally, you must have Ruby and Rails installed on your machine. Once you have those installed, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the root directory of the project in your terminal.
+3. Run `bundle install` to install all necessary gems.
+4. Run `rails db:migrate` to create the necessary database tables.
+5. Run `rails db:seed` to seed the database with sample data.
+6. Start the Rails server by running `rails s`.
+7. Use a tool like Postman to test the API endpoints.
+
+<!-- Things you may want to cover:
 
 * Ruby version
 
@@ -21,4 +32,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... -->
