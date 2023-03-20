@@ -17,6 +17,15 @@ def show
   end
 end
 
-  def create
+#DELETE /restaurants/:id
+
+def destroy
+  restaurant = Restaurant.find_by(id: params[:id])
+  if restaurant
+    restaurant.destroy
+    head :no_content
+  else
+    render json: { error: "restaurant not found" }, status: :not_found
   end
+end
 end
