@@ -31,8 +31,8 @@ puts "seeding pizzas 🍕...."
   
      piz = Pizza.create(
           "name": Faker::Food.dish,
-          "ingredients": Faker::Food.ingredient
-          "price": rand(1.0..29.0),
+          "ingredients": Faker::Food.ingredient,
+          "price": rand(1.0..29.0)
 
       )
       rand(3..5).times do
