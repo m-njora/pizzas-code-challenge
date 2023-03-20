@@ -1,3 +1,4 @@
+
 puts "seeding pizzas 🍕...."
 # Seed data for pizzas table
 10.times do
