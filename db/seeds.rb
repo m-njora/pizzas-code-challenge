@@ -30,5 +30,5 @@ end
       address: Faker::Address.full_address,
     )
   end
-end
+
 puts "done seeding"
