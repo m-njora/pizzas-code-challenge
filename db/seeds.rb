@@ -1,3 +1,6 @@
+RestaurantPizza.destroy_all
+Pizza.destroy_all
+Restaurant.destroy_all
 
 puts "seeding pizzas 🍕...."
 # Seed data for pizzas table
@@ -27,5 +30,5 @@ end
       address: Faker::Address.full_address,
     )
   end
-  
+end
 puts "done seeding"
