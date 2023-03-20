@@ -3,8 +3,9 @@ puts "seeding pizzas 🍕...."
 10.times do
     Pizza.create(
       name: Faker::Food.dish,
+      ingredients: Faker::Food.ingredient,
       description: Faker::Food.description,
-      price: Faker::Commerce.price(range: 10..30.0, as_string: false)
+      price: Faker::Commerce.price(range: 1..30.0, as_string: false)
     )
   end
   
@@ -14,7 +15,7 @@ puts "seeding pizzas 🍕...."
       name: Faker::Food.dish,
       ingredients: Faker::Food.ingredient,
       description: Faker::Food.description,
-      price: Faker::Commerce.price(range: 10..30.0, as_string: false)
+      price: Faker::Commerce.price(range: 1..30.0, as_string: false)
     )
   end
   
