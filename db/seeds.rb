@@ -37,6 +37,7 @@ puts "seeding pizzas 🍕...."
       )
       rand(3..5).times do
         RestaurantPizza.create(
+            "name": Faker::Food.dish,
             "price": rand(1.0..29.0),
             "pizza_id": rand(1..10),
             "restaurant_id": rand(1..10)
