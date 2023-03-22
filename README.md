@@ -76,7 +76,7 @@ If the restaurant is not found, the API will return the following JSON data, alo
 }
 ```
 
-DELETE /restaurants/:id
+# DELETE /restaurants/:id
 If the `Restaurant` exists, it should be removed from the database, along with
 any `RestaurantPizza`s that are associated with it (a `RestaurantPizza` belongs
 to a `Restaurant`, so you need to delete the `RestaurantPizza`s before the
