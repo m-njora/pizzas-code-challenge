@@ -94,7 +94,7 @@ the appropriate HTTP status code:
 }
 ```
 
-GET /pizzas
+# GET /pizzas
 Return JSON data in the format below:
 
 ```
@@ -112,7 +112,7 @@ Return JSON data in the format below:
 ]
 ```
 
-POST /restaurant_pizzas
+# POST /restaurant_pizzas
 This route should create a new `RestaurantPizza` that is associated with an
 existing `Pizza` and `Restaurant`. It should accept an object with the following
 properties in the body of the request:
@@ -145,6 +145,13 @@ JSON data, along with the appropriate HTTP status code:
 }
 
 ```
+### `License`
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+### `Live Demo`
+You can view a live demo of the app at https://pizza-challenge.onrender.com
+
 
 
 
