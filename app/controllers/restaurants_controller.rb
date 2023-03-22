@@ -9,9 +9,9 @@ class RestaurantsController < ApplicationController
   end
 # GET /restaurants/:id
 def show
-  restaurant = Restaurant.find_by(id: params[:id])
+  restaurant = Restaurant.find( params[:id])
   if restaurant
-    render json: restaurant
+    render json: restaurant, serializer: NestPizzasSerializer, status: :ok
   else
     render json: { error: "Restaurant not found" }, status: :not_found
   end

@@ -14,6 +14,39 @@ To run this API locally, you must have Ruby and Rails installed on your machine.
 6. Start the Rails server by running `rails s`.
 7. Use a tool like Postman to test the API endpoints.
 
+## Models
+The following relationships have been established between the models:
+
+* A Restaurant has many Pizzas through RestaurantPizza
+* A Pizza has many Restaurants through RestaurantPizza
+* A RestaurantPizza belongs to a Restaurant and belongs to a Pizza
+
+## Validations
+The RestaurantPizza model has a validation that ensures the price is between 1 and 30.
+
+## Routes
+The following routes have been implemented:
+
+# GET /restaurants
+Returns a list of all restaurants in JSON format:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Sottocasa NYC",
+    "address": "298 Atlantic Ave, Brooklyn, NY 11201"
+  },
+  {
+    "id": 2,
+    "name": "PizzArte",
+    "address": "69 W 55th St, New York, NY 10019"
+  }
+]
+```
+
+
+
 <!-- Things you may want to cover:
 
 * Ruby version
