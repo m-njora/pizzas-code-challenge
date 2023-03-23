@@ -1,8 +1,12 @@
-RestaurantPizza.destroy_all
-Pizza.destroy_all
-Restaurant.destroy_all
+puts "deleting existing data...."
 
-puts "seeding pizzas 🍕...."
+ActiveRecord::Base.connection.execute("DELETE FROM restaurants;")
+ActiveRecord::Base.connection.execute("DELETE FROM pizzas;")
+ActiveRecord::Base.connection.execute("DELETE FROM restaurant_pizzas;")
+
+puts "done deleting data."
+
+puts "seeding pizzas 🍕 and restaurants 🍽...."
 # # Seed data for pizzas table
 # 10.times do
 #     Pizza.create(
@@ -24,12 +28,12 @@ puts "seeding pizzas 🍕...."
 
   
 10.times do
-  res= Restaurant.create(
+  restaurant= Restaurant.create(
           "name": Faker::Restaurant.name,
           "address": Faker::Address.full_address
       )
   
-     piz = Pizza.create(
+     pizza = Pizza.create(
           "name": Faker::Food.dish,
           "ingredients": Faker::Food.ingredient,
           "price": rand(1.0..29.0)
