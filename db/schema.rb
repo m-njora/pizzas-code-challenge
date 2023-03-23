@@ -20,10 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_040247) do
   end
 
   create_table "restaurant_pizzas", force: :cascade do |t|
+    t.decimal "price", null: false
     t.integer "pizza_id", default: 0, null: false
     t.integer "restaurant_id", default: 0, null: false
-    t.string "name", null: false
-    t.decimal "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

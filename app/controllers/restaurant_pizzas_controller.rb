@@ -1,5 +1,5 @@
 class RestaurantPizzasController < ApplicationController
-rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+# rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   # def index
   #   restaurant_pizzas = RestaurantPizza.all
   #   render json: restaurant_pizzas
@@ -8,20 +8,22 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
  
  
   def create
-  new_obj = RestaurantPizza.create!(restaurant_pizza_params)
-  pizza = Pizza.find(new_obj.pizza_id)
-  render json: pizza, status: :created
-  
-    end
+    restaurant_pizza = RestaurantPizza.new(restaurant_pizza_params)
+    if restaurant_pizza.save
+      pizza = Pizza.find(restaurant_pizza.pizza_id)
+      render json: pizza, status: :created
+  else
+    render_unprocessable_entity_response(restaurant_pizza)
+  end
+  end
   #ensures only  specific attributes are assigned to the restaurantpizza
     private
     def restaurant_pizza_params
       params.permit( :price, :pizza_id, :restaurant_id)
     end
   
-  def render_response(invalid)
-    render json: {errors: invalid.record.errors }, status:
-    :unprocessable_entity
-  end
+    def render_unprocessable_entity_response(resource)
+      render json: { errors: resource.errors.full_messages }, status: :unprocessable_entity
+    end
   
 end
